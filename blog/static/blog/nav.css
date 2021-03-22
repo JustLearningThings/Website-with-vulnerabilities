@@ -1,0 +1,50 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;1,600&display=swap');
+
+nav {
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    height: 75px;
+    background-color: #1a54b0;
+    color: whitesmoke;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    letter-spacing: .75px;
+}
+
+/* for adding an offset to <main></main> */
+.with-nav-offset { margin-top: 75px; }
+
+nav ul {
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-family: 'Raleway', sans-serif;
+}
+
+nav ul li {
+    margin: 0 12.5px;
+    font-size: .85rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: inherit;
+}
+
+nav #logo {
+    font-size: 1.3rem;
+}
+
+nav #logo a:hover {
+    opacity: .9;
+    text-shadow: 0 0 1px whitesmoke;
+}

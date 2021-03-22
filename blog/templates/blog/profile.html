@@ -1,0 +1,60 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/profile.css' %}">
+{% endblock %}
+
+{% block 'body' %}
+
+{% include "./nav.html" %}
+
+<main>
+    <div id='main-info'>
+        <h2 class='font-bitter'>{{ username }}'s profile</h2>
+        <span>Joined: {{ date_joined }}</span>
+        <form action='/profile/{{ id }}/delete' method='post'>
+            {% csrf_token %}
+            <input id='submit-button' type='submit' value='Delete account'>
+        </form>
+    </div>
+    {% if posts %}
+        <div id='posts'>
+            <div id='posts-dropdown-container'>
+                <div id='posts-dropdown'>
+                    <span>{{ username }}'s posts</span>
+                    <span id='dropdown-icon'>&#9660;</span>
+                </div>
+                <div id='posts-dropdown-content' class='hidden'>
+                    <ul>
+                        {% for post in posts %}
+                            <li>
+                                <div class='post-container'>
+                                    <a class='post' href='/post/{{ post.id }}/'>
+                                        {% if post.image %}
+                                            <img src='{{ post.image.url }}' alt='image for post "{{ post.title }}"'>
+                                        {% endif %}
+                                        <div class='post-content'>
+                                            <div class='post-content-main'>
+                                                <h3>{{ post.title }}</h3>
+                                                <p>{{ post.content|make_list|slice:"0:128"|join:""|add:"..." }}</p>
+                                            </div>
+                                            <div class='post-footer'>
+                                                <span>{{ post.author }}</span>
+                                                <span>{{ post.pub_date }}</span>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+</main>
+
+<script src="{% static 'blog/profile.js' %}"></script>
+{% endblock %}

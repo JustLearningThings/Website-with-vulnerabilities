@@ -1,0 +1,22 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/nav.css' %}">
+{% endblock %}
+
+{% block nav %}
+    <nav>
+        <h2 id='logo' class='font-bitter'><a href='/'>FlawsBlog</a></h2>
+        <ul id='nav-menu'>
+            {% if not is_logged_in %}
+                <li><a href='/signup'>Sign up</a></li>
+                <li><a href='/login'>Log in</a></li>
+            {% else %}
+                <li><a href='/profile/{{ user.id }}'>{{ user.username }}</a></li>
+                <li><a href='/logout'>Log out</a></li>
+            {% endif %}
+        </ul>
+    </nav>
+{% endblock %}

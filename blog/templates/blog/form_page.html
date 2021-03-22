@@ -1,0 +1,16 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/form_page.css' %}">
+{% endblock %}
+
+{% block 'body' %}
+<main>
+    <div id='form'>
+        {% block form %}
+        {% endblock %}
+    </div>
+</main>
+{% endblock %}

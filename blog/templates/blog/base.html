@@ -1,0 +1,21 @@
+{% load static %}
+
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlawsBlog</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/style.css' %}">
+    {% block styles %}
+    {% endblock %}
+</head>
+<body>
+    {% block nav %}
+    {% endblock %}
+    {% block 'body' %}
+    {% endblock %}
+
+    <script src="{% static 'blog/base.js' %}" ></script>
+</body>
+</html>

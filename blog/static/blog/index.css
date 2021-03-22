@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;600&family=Raleway:ital,wght@0,300;0,400;1,600&display=swap');
+
+#heading {
+    width: 100vw;
+    max-width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 5%;
+}
+
+main {
+    font-family: 'Raleway', sans-serif;
+}
+
+#add-post {
+    font-size: 2.75rem;
+    opacity: .9;
+}
+
+#add-post:hover {
+    opacity: .65;
+}
+
+#post-list {
+    width: 85%;
+    margin: auto;
+}
+
+.post-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 50px auto;
+    border: 1px solid rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+    transition: transform .1s ease, box-shadow .1s ease;
+}
+
+.post-container:hover {
+    box-shadow: 5px 10px rgba(0, 0, 0, 0.5);
+    transform: scale(1.005);
+}
+
+.post {
+    display: block;
+    display: flex;
+}
+
+.post img {
+    width: 40%;
+    height: auto;
+}
+
+.post-content {
+    width: 60%;
+    padding: 0 15px;
+    position: relative;
+}
+
+.post-content-main {
+    padding-bottom: 30px;
+}
+
+.post-content-main h3 {
+    letter-spacing: 1px;
+}
+
+.post-content-main p {
+    font-size: .9rem;
+    letter-spacing: .5px;
+}
+
+.post-footer {
+    position: absolute;
+    width: calc(100% - 30px);
+    bottom: 10px;
+    left: 15px;
+    font-size: .725rem;
+    font-weight: lighter;
+    letter-spacing: .25px;
+    display: flex;
+    justify-content: space-between;
+}

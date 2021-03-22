@@ -1,0 +1,15 @@
+{% extends './form_page.html' %}
+
+{% block form %}
+    <h1>{{ auth_type|title }} form</h1>
+
+    {% if error %}
+        <h2><strong>{{ error }}</strong></h2>
+    {% endif %}
+
+    <form action='/{{ auth_type }}/' method='post'>
+        {% csrf_token %}
+        {{ form }}
+        <input type='submit' value='Submit'>
+    </form>
+{% endblock %}

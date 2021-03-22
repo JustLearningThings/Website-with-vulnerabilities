@@ -1,0 +1,78 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;600&family=Raleway:ital,wght@0,300;0,400;1,600&display=swap');
+
+main {
+    width: 100vw;
+    max-width: 100%;
+    height: 100vh;
+    background-color: #1a54b0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+#form {
+    margin: auto;
+    min-width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    border-radius: 15px;
+    box-shadow: 0 0 10px black;
+    background-color: whitesmoke;
+    padding: 20px 50px 30px 50px;
+}
+
+#form form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    letter-spacing: 1px;
+}
+
+form label {
+    margin-top: 30px;
+    font-size: .975rem;
+}
+
+form input, form textarea {
+    width: 80%;
+    border: 1px solid rgba(0, 0, 0, .25);
+    border-radius: 5px;
+    margin: 10px 5px;
+    padding: 7.5px;
+    font-family: 'Raleway', sans-serif;
+}
+
+form input[type='submit'] {
+    margin-top: 40px;
+    padding: 8.5px 0;
+    cursor: pointer;
+    background-color: tomato;
+    color: white;
+    box-shadow: 0 0 3px rgba(0, 0, 0, .25);
+    font-size: .9rem;
+    transition: transform .1s ease;
+}
+
+form input[type='submit']:hover {
+    opacity: .8;
+    transform: scale(.997);
+    box-shadow: none;
+}
+
+form input[type='file'] {
+    border: none;
+}
+
+form textarea {
+    resize: none;
+    max-height: 200px;
+}
+
+#form h1 {
+    font-size: 1.75rem;
+    letter-spacing: .75px;
+}

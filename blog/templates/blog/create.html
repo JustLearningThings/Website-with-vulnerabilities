@@ -1,0 +1,15 @@
+{% extends './form_page.html' %}
+
+{% block form %}
+    <h1>Create a post</h1>
+
+    {% if error %}
+        <h2><strong>{{ error }}</strong></h2>
+    {% endif %}
+
+    <form action='/post/' method='post' enctype='multipart/form-data'>
+        {% csrf_token %}
+        {{ form }}
+        <input type='submit' value='Submit'>
+    </form>
+{% endblock %}

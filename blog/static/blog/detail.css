@@ -1,0 +1,188 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitter:wght@400;600&family=Raleway:ital,wght@0,300;0,400;1,600&display=swap');
+
+#post {
+    margin: 5% auto;
+    width: 85%;
+    max-width: 1150px;
+    font-family: 'Raleway', sans-serif;
+
+    opacity: 0;
+    animation: post-appear 1.25s ease forwards;
+    position: relative;
+}
+
+#post h1 {
+    text-align: center;
+    letter-spacing: 1px;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    font-size: 2.5rem;
+}
+
+#post img {
+    max-width: 100%;
+    border-radius: 3px;
+    margin: auto;
+    display: block;
+}
+
+#post p {
+    letter-spacing: .5px;
+    font-size: .95rem;
+    margin-top: 35px;
+}
+
+#post-footer {
+    font-size: .725rem;
+    font-weight: lighter;
+    letter-spacing: .25px;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 50px;
+}
+
+@keyframes post-appear {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+#post-delete {
+    position: absolute;
+    right: -7.5%;
+    top: 15px;
+}
+
+#post-delete input[type='submit'] {
+    font-size: .75rem;
+    font-weight: lighter;
+    letter-spacing: 1px;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+#post-delete input[type='submit']:hover {
+    opacity: .75;
+}
+
+hr {
+    width: 85%;
+    margin-bottom: 25px;
+}
+
+#comments h3 {
+    text-align: center;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 400;
+    letter-spacing: .75px;
+}
+
+.comment {
+    width: 85%;
+    min-width: 300px;
+    margin: 10px auto;
+    padding: 25px;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, .1);
+    border-radius: 3px;
+    opacity: .8;
+}
+
+.comment:nth-child(odd) { background-color: azure; }
+.comment:nth-child(even) { background-color: whitesmoke; }
+
+.comment-author, .comment-pub-date, .comment-delete {
+    font-weight: lighter;
+    letter-spacing: .75px;
+}
+
+.comment-author {
+    font-size: .85rem;
+}
+
+.comment-pub-date, .comment-delete {
+    font-size: .7rem;
+}
+
+.comment-delete, .delete {
+    color: crimson;
+}
+
+.comment p {
+    padding-left: 15px;
+    letter-spacing: .5px;
+    font-size: .95rem;
+    margin: 30px auto;
+    border-left: 1px solid olivedrab;
+}
+
+.comment-bottom {
+    display: flex;
+    justify-content: space-between;
+}
+
+.comment-delete-form input[type='submit'] {
+    cursor: pointer;
+}
+
+.comment-delete-form input[type='submit']:hover {
+    opacity: .75;
+}
+
+.comment-delete-form input {
+    background: none;
+    border: none;
+}
+
+#comment-form {
+    width: 85%;
+    margin: auto;
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Raleway', sans-serif;
+}
+
+#comment-form * {
+    margin: 15px auto;
+}
+
+#comment-form label {
+    font-size: .95rem;
+    letter-spacing: .5px;
+}
+
+#comment-form textarea {
+    resize: none;
+    width: 100%;
+    max-width: 750px;
+    min-height: 175px;
+    padding: 15px;
+    box-sizing: border-box;
+}
+
+#comment-form input[type='submit'] {
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: .75px;
+    border: 1px solid cornflowerblue;
+    border-radius: 15px;
+    color: cornflowerblue;
+    padding: 8px 16px;
+    background: none;
+    transition: background-color .15s ease;
+    cursor: pointer;
+}
+
+#comment-form input[type='submit']:hover {
+    background-color: cornflowerblue;
+    color: whitesmoke;
+}
+
+#no-comments {
+    font-family: 'Raleway', sans-serif;
+    font-size: .95rem;
+    margin: 75px auto;
+    display: block;
+    text-align: center;
+}

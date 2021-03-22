@@ -1,0 +1,42 @@
+{% extends "./base.html" %}
+
+{% load static %}
+
+{% block styles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'blog/index.css' %}">
+{% endblock %}
+
+{% block 'body' %}
+
+{% include "./nav.html" %}
+
+<main>
+    <div id='heading'>
+        <h1 class='font-bitter'>Posts</h1>
+        <a id='add-post' href='/post/'>+</a>
+    </div>
+
+    <div id='post-list'>
+        {% for post in latest_post_list %}
+            <div class='post-container'>
+                <a class='post' href='/post/{{ post.id }}/'>
+                    {% if post.image %}
+                        <img src='{{ post.image.url }}' alt='image for post "{{ post.title }}"'>
+                    {% endif %}
+                    <div class='post-content'>
+                        <div class='post-content-main'>
+                            <h3>{{ post.title }}</h3>
+                            <p>{{ post.content|make_list|slice:"0:256"|join:""|add:"..." }}</p>
+                        </div>
+                        <div class='post-footer'>
+                            <span>{{ post.author }}</span>
+                            <span>{{ post.pub_date }}</span>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</main>
+
+{% endblock %}
