@@ -137,11 +137,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/media/')
 
 
 # Redirect from HTTP to HTTPS
-SECURE_SSL_REDIRECT = True
+# SECURE_SSL_REDIRECT = True
 # Only send cookies over HTTPS
-SESSION_COOKIE_SECURE = True
+# SESSION_COOKIE_SECURE = True
 # Prevent any POST data being accepted over HTTP
-CSRF_COOKIE_SECURE = True
+# CSRF_COOKIE_SECURE = True
 
 
 
