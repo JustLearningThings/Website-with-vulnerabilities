@@ -155,3 +155,22 @@ def loginView(request):
 def logoutView(request):
     logout(request)
     return redirect('/')
+
+
+
+
+# if we were to use django-ratelimit, here is what would've been needed:
+# 1. Install django-ratelimit with pip install django-ratelimit
+# 2. add rate-limiting decorators to all the views that require rate-limiting like this:
+# from ratelimit.decorators import ratelimit
+
+
+# @ratelimit(key='ip', rate='50/m')
+# def view(request):
+#    # ...
+
+# 3.Ensure that the cache backend is setup to be both persistent and work across multiple deployment worker instances. For this uncomment the CACHES dictionary in setting.py then run 'py manage.py createcachetable' (or an equivalent in your OS).
+# 4. Test. For a quick demonstation use the decorator from below. It blocks by ip when you request a GET to a certain view. I set the rate to 1 request per hour, so a simple GET to a page, then refreshing will do the job. It should redirect to a 403 page.
+# @ratelimit(key='ip', rate='1/h', method='GET', block=True)
+
+# more on this at: https://django-ratelimit.readthedocs.io/en/stable/

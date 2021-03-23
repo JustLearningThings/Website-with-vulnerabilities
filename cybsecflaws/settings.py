@@ -146,4 +146,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/media/')
 
 
 # lets set some limits to the request size
-DATA_UPLOAD_MAX_NUMBER_FIELDS = 256
+# DATA_UPLOAD_MAX_NUMBER_FIELDS = 256
+
+
+
+# settings for enabling cache in order to test django-ratelimit
+
+# CACHES = {
+#     'default': {
+#         'BACKEND': 'django.core.cache.backends.db.DatabaseCache',
+#         'LOCATION': 'cache_table'
+#     }
+# }
