@@ -135,5 +135,15 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'blog/media/')
 
 
+
+# Redirect from HTTP to HTTPS
+SECURE_SSL_REDIRECT = True
+# Only send cookies over HTTPS
+SESSION_COOKIE_SECURE = True
+# Prevent any POST data being accepted over HTTP
+CSRF_COOKIE_SECURE = True
+
+
+
 # lets set some limits to the request size
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 256
